@@ -5,7 +5,7 @@ const Header = ({ title }: { title: string }) => {
   return (
     <header className={styles.container}>
       <nav className={styles.nav}>
-        <Link href="/">
+        <Link href="/" passHref={true}>
           <span className={styles.back}>jearl.io</span>
         </Link>
       </nav>

@@ -8,13 +8,13 @@ const BlogListItem = ({ post }: any) => {
   const icon = post.attributes.icon;
   const url = `/blog/${post.attributes.slug}`;
   return (
-    <Link href={url}>
+    <Link href={url} passHref={true}> 
       <li className={styles.item}>
         <div className={styles.itemIcon}>
           <Icon icon={icon} />
         </div>
         <div className={styles.itemTitleContainer}>
-          <h1 className={styles.itemTitle}>{title}</h1>
+          <a className={styles.itemTitle}>{title}</a>
           <span className={styles.itemDate}>{date}</span>
         </div>
       </li>
