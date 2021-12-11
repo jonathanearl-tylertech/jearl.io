@@ -15,4 +15,4 @@ const Header = ({ title }: { title: string }) => {
   )
 }
 
-export default Header
+export default Header;

@@ -2,7 +2,7 @@ import styles from '../styles/BlogList.module.css';
 import Icon from './Icon';
 import Link from 'next/link';
 
-const BlogListItem = ({ post }: any) => {
+const ListItem = ({ post }: any) => {
   const title = post.attributes.title;
   const date = new Date(post.attributes.date).toLocaleDateString();
   const icon = post.attributes.icon;
@@ -21,4 +21,4 @@ const BlogListItem = ({ post }: any) => {
     </Link>
   );
 }
-export default BlogListItem;
+export default ListItem;

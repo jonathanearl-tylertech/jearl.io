@@ -4,7 +4,7 @@ import fm, { FrontMatterResult} from 'front-matter';
 import { IAttributes } from '../interfaces/front-matter.interface';
 
 class Posts {
-  posts: FrontMatterResult<IAttributes>[];
+  private posts: FrontMatterResult<IAttributes>[];
 
   constructor() {
     const root = process.cwd();
