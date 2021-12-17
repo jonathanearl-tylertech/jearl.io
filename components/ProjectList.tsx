@@ -14,7 +14,7 @@ const ProjectList = ({ projects }: any) => {
   })
     .sort((a: any, b: any) => (a.attributes.date.getDate() - b.attributes.date.getDate()))
     .map((project: any) => (
-      <ListItem key={project.attributes.slug} post={project}/>
+      <ListItem key={project.attributes.slug} page={project} url={`/project/${project.attributes.slug}`}/>
     ));
 
 

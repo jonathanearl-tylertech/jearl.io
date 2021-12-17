@@ -14,7 +14,7 @@ const BlogList = ({ posts }: any) => {
   })
     .sort((a: any, b: any) => (a.attributes.date.getDate() - b.attributes.date.getDate()))
     .map((post: any) => (
-      <ListItem post={post} key={post.attributes.slug}/>
+      <ListItem page={post} key={post.attributes.slug} url={`/blog/${post.attributes.slug}`}/>
     ));
 
 
