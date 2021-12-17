@@ -25,7 +25,7 @@ const Post = ({ author, post }: any) => {
 export default Post;
 
 export async function getStaticPaths() {
-  const slugs = Posts.getAllPosts().map(p => p.attributes.slug);
+  const slugs = Posts.getAll().map(p => p.attributes.slug);
   return {
     paths: slugs.map((slug: string) => ({
       params: {
@@ -37,7 +37,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: { params: { title: string } }) {
-  const post = Posts.getPost(params.title);
-  const author = Author.getAuthor();
+  const post = Posts.get(params.title);
+  const author = Author.getMe();
   return { props: { post, author } };
 }

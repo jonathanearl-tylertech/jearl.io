@@ -45,9 +45,9 @@ const Home: NextPage = ({ posts, projects, author }: any) => {
 }
 
 export async function getStaticProps() {
-  const posts = Posts.getAllPosts();
-  const author = Author.getAuthor();
-  const projects = Projects.getAllProjects();
+  const posts = Posts.getAll();
+  const author = Author.getMe();
+  const projects = Projects.getAll();
   return {
     props: {
       posts,
