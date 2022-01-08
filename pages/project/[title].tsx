@@ -4,28 +4,29 @@ import Head from 'next/head';
 import styles from '../../styles/BlogPost.module.css';
 import Header from '../../components/Header';
 import Author from '../../lib/author';
-import Posts from '../../lib/posts';
+import Projects from '../../lib/projects';
 import BlogHeader from '../../components/BlogHeader';
 
-const Post = ({ author, post }: any) => {
+const Project = ({ author, project }: any) => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>{post.attributes.title} | jearl</title>
+        <title>{project.attributes.title} | jearl</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header title={post.attributes.title}/>
-      <BlogHeader title={post.attributes.title} date={post.attributes.date} icon={post.attributes.icon} username={author.attributes.username}/>
+      <Header title={project.attributes.title}/>
+      <BlogHeader title={project.attributes.title} date={project.attributes.date} icon={project.attributes.icon} username={author.attributes.username}/>
       <main className={styles.main}>
-        <ReactMarkdown>{post.body}</ReactMarkdown>
+        <ReactMarkdown>{project.body}</ReactMarkdown>
       </main>
     </div>
   );
 }
-export default Post;
+export default Project;
 
 export async function getStaticPaths() {
-  const slugs = Posts.getAll().map(p => p.attributes.slug);
+  const slugs = Projects.getAll().map(p => p.attributes.slug);
+  console.log(slugs)
   return {
     paths: slugs.map((slug: string) => ({
       params: {
@@ -37,7 +38,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: { params: { title: string } }) {
-  const post = Posts.get(params.title);
+  const project = Projects.get(params.title);
   const author = Author.getMe();
-  return { props: { post, author } };
+  return { props: { project, author } };
 }

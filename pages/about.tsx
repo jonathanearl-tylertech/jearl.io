@@ -22,7 +22,7 @@ const Home: NextPage = ({ author }: any) => {
 }
 
 export async function getStaticProps() {
-  const author = Author.getAuthor();
+  const author = Author.getMe();
   return {
     props: {
       author
