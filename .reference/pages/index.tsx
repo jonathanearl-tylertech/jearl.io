@@ -1,17 +1,17 @@
 import type { NextPage } from 'next'
 import { useState } from 'react';
 import Head from 'next/head'
-import Header from '../components/Header';
-import ProfileDetail from '../components/ProfileDetail';
-import BlogList from '../components/BlogList';
+import Header from '../../components/Header';
+import ProfileDetail from '../../components/ProfileDetail';
+import BlogList from '../../components/BlogList';
 import styles from '../styles/Home.module.css'
-import Selector from '../components/Selector';
-import Footer from '../components/Footer';
-import Posts from '../lib/posts';
-import Author from '../lib/author';
-import Projects from '../lib/projects';
-import ProjectList from '../components/ProjectList';
-import About from '../components/About';
+import Selector from '../../components/Selector';
+import Footer from '../../components/Footer';
+import Posts from '../../lib/posts';
+import Author from '../../lib/author';
+import Projects from '../../lib/projects';
+import ProjectList from '../../components/ProjectList';
+import About from '../../components/About';
 
 const Home: NextPage = ({ posts, projects, author }: any) => {
   const [show, setShow] = useState<'post' | 'project' | 'about'>('post');
