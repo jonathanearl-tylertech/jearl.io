@@ -4,6 +4,10 @@
   flex-grow: 1;
 }
 
+.spacer {
+  padding: 0 4px;
+}
+
 .title {
   margin: 0;
   font-size: 16px;
@@ -19,10 +23,28 @@
   padding: 0;
 }
 
-.item {
+.authorSection {
   display: flex;
   align-items: center;
-  padding: 8px 16px;
+  margin-bottom: 12px;
+}
+
+.authorUsername {
+  margin-left: 4px;
+  color: rgb(41,41,41);
+  font-size: 14px;
+}
+
+.itemContainer {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  margin: 0 24px;
 }
 
 .itemIcon {
@@ -46,12 +68,13 @@
 }
 
 .itemTitle {
-  font-size: 14px;
-  font-weight: 400;
+  color: rgb(41,41,41);
+  font-weight: 700;
+  font-size: 16px;
   margin: 0;
 }
 
 .itemDate {
+  color: rgb(117,117,117);
   font-size: 14px;
-  color: rgb(142, 142, 142);
 }
