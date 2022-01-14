@@ -1,5 +1,5 @@
 import styles from '../styles/BlogList.module.css';
-import BlogListItem from './BlogListItem';
+import ListItem from './ListItem';
 
 const BlogList = ({ posts }: any) => {
   const items = posts.map((post: any) => {
@@ -14,7 +14,7 @@ const BlogList = ({ posts }: any) => {
   })
     .sort((a: any, b: any) => (a.attributes.date.getDate() - b.attributes.date.getDate()))
     .map((post: any) => (
-      <BlogListItem post={post} key={post.attributes.slug} url={`/blog/${post.attributes.slug}`}/>
+      <ListItem page={post} key={post.attributes.slug} url={`/blog/${post.attributes.slug}`}/>
     ));
 
 

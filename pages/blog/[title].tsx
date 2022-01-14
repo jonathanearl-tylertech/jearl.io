@@ -5,7 +5,7 @@ import styles from '../../styles/BlogPost.module.css';
 import Header from '../../components/Header';
 import Author from '../../lib/author';
 import Posts from '../../lib/posts';
-import BlogHeader from '../../components/BlogHeader';
+// import BlogHeader from '../../components/BlogHeader';
 
 const Post = ({ author, post }: any) => {
   return (
@@ -15,7 +15,7 @@ const Post = ({ author, post }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header title={post.attributes.title}/>
-      <BlogHeader title={post.attributes.title} date={post.attributes.date} icon={post.attributes.icon} username={author.attributes.username}/>
+      {/* <BlogHeader title={post.attributes.title} date={post.attributes.date} icon={post.attributes.icon} username={author.attributes.username}/> */}
       <main className={styles.main}>
         <ReactMarkdown>{post.body}</ReactMarkdown>
       </main>

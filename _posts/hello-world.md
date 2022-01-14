@@ -1,8 +1,10 @@
 ---
-title: 'hello friends'
+title: 'super click baity title that makes you love or hate'
 icon: '👋'
 excerpt: 'First post'
 date: '2020-03-16T05:35:07.322Z'
+author:
+  username: 'whattheearl'
 ---
 hello friends,
 
