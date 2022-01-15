@@ -25,11 +25,9 @@ jobs:
 
     - name: Build
       run: |
-        ls -A
         npm ci
         npm run lint
         npm run build
-        ls -A
     
     - name: Setup AWS CLI
       uses: aws-actions/configure-aws-credentials@v1
@@ -40,10 +38,11 @@ jobs:
     
     - name: Publish to jearl.io
       run: |
-        ls -A
         aws s3 sync ./out s3://jearl.io
     
     - name: Release
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
         git fetch --unshallow --tags
         npm run release
