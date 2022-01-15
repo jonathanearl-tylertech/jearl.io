@@ -13,7 +13,7 @@ const BlogListItem = ({ post, url }: any) => {
   const image = post.attributes?.image;
   return (
     <li className={styles.row}>
-      <Link href={url}>
+      <Link href={url} passHref={true}>
         <article>
           <section className={styles.authorSection}>
             <Icon icon={'🙎‍♂️'} size={24}/>
@@ -21,12 +21,12 @@ const BlogListItem = ({ post, url }: any) => {
             <span className={styles.spacer}>·</span>
             <span className={styles.itemDate}>{`${month} ${day}, ${year}`}</span>
           </section>
-          <section className={styles.itemContainer}>
+          <a className={styles.itemContainer}>
             <div>
               <h3 className={styles.itemTitle}>{title}</h3>
             </div>
             <img src="https://via.placeholder.com/56" alt="placeholder" style={{marginLeft: '24px'}}/>
-          </section>
+          </a>
         </article>
       </Link>
       {/* <div className={styles.itemIcon}>

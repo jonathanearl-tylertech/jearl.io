@@ -3,12 +3,8 @@ import { useRouter } from 'next/router'
 
 
 const Root = () => {
+  const router = useRouter();
+  useEffect(() => { router.push('/blog') }, [router])
   return (<div>loading</div>)
 }
 export default Root;
-
-export async function getStaticProps() {
-  const router = useRouter();
-  router.push('/blog');
-}
-
