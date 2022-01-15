@@ -41,7 +41,7 @@ jobs:
     - name: Publish to jearl.io
       run: |
         ls -A
-        aws s3 sync ./out s3://mybucket
+        aws s3 sync ./out s3://jearl.io
     
     - name: Release
       run: |
