@@ -8,6 +8,7 @@ on:
 jobs:          
   release:
     name: Build and Release
+    runs-on: ubuntu-latest
     permissions:
       id-token: write
       contents: read
@@ -15,8 +16,6 @@ jobs:
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v2
-    
-
     
     - name: Setup Node
       uses: actions/setup-node@v2
