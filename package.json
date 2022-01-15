@@ -5,7 +5,8 @@
     "dev": "next dev -p 8080",
     "build": "next build && next export",
     "start": "next start -p 8080",
-    "lint": "next lint"
+    "lint": "next lint",
+    "release": "auto shipit"
   },
   "dependencies": {
     "front-matter": "^4.0.2",
@@ -17,6 +18,11 @@
     "remark-html": "^15.0.1"
   },
   "devDependencies": {
+    "auto": "^10.32.5",
+    "@auto-it/all-contributors": "^10.32.5",
+    "@auto-it/conventional-commits": "^10.32.5",
+    "@auto-it/first-time-contributor": "^10.32.5",
+    "@auto-it/git-tag": "^10.32.5",
     "@types/node": "16.11.11",
     "@types/react": "17.0.37",
     "eslint": "7.32.0",

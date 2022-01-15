@@ -1,0 +1,50 @@
+name: Build and Release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:          
+  release:
+    name: Build and Release
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v2
+    
+
+    
+    - name: Setup Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+        cache: 'npm'
+
+    - name: Build
+      run: |
+        ls -A
+        npm ci
+        npm run lint
+        npm run build
+        ls -A
+    
+    - name: Setup AWS CLI
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-region: us-west-2
+        role-to-assume: arn:aws:iam::682471220577:role/publish-to-s3
+        role-session-name: MySessionName
+    
+    - name: Publish to jearl.io
+      run: |
+        ls -A
+        aws s3 sync ./out s3://mybucket
+    
+    - name: Release
+      run: |
+        git fetch --unshallow --tags
+        npm run release
