@@ -35,7 +35,7 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-region: us-west-2
-        role-to-assume: arn:aws:iam::682471220577:role/publish-to-s3
+        role-to-assume: arn:aws:iam::682471220577:role/PUBLISH_TO_S3
         role-session-name: MySessionName
     
     - name: Publish to jearl.io
