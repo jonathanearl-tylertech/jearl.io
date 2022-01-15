@@ -6,7 +6,7 @@
     "build": "next build && next export",
     "start": "next start -p 8080",
     "lint": "next lint",
-    "release": "auto shipit"
+    "release": "auto release"
   },
   "dependencies": {
     "front-matter": "^4.0.2",
