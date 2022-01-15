@@ -1,8 +1,8 @@
 import styles from '../styles/BlogList.module.css';
 import ListItem from './ListItem';
 
-const ProjectList = ({ projects }: any) => {
-  const items = projects.map((post: any) => {
+const BlogList = ({ posts }: any) => {
+  const items = posts.map((post: any) => {
     const result = {
       ...post,
       attributes: {
@@ -13,8 +13,8 @@ const ProjectList = ({ projects }: any) => {
     return result;
   })
     .sort((a: any, b: any) => (a.attributes.date.getDate() - b.attributes.date.getDate()))
-    .map((project: any) => (
-      <ListItem key={project.attributes.slug} post={project}/>
+    .map((post: any) => (
+      <ListItem page={post} key={post.attributes.slug} url={`/blog/${post.attributes.slug}`}/>
     ));
 
 
@@ -26,4 +26,4 @@ const ProjectList = ({ projects }: any) => {
     </section>
   );
 }
-export default ProjectList;
+export default BlogList;

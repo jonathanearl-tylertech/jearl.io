@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from '../styles/Selector.module.css';
 
 const Selector = ({ postCount, projectCount, setShow } : any) => {
@@ -12,9 +12,9 @@ const Selector = ({ postCount, projectCount, setShow } : any) => {
         <div className={styles.summaryCount}>{projectCount}</div>
         <div className={styles.summaryTitle}>projects</div>
       </div>
-      <div className={styles.summaryItem} onClick={() => console.log('hi')}>
-        <div className={styles.summaryCount}>1</div>
-        <div className={styles.summaryTitle}>following</div>
+      <div className={styles.summaryItem} onClick={() => setShow('about')}>
+        <div className={styles.summaryCount}>{1}</div>
+        <div className={styles.summaryTitle}>about</div>
       </div>
     </section>
   );

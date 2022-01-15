@@ -25,7 +25,7 @@ const Project = ({ author, project }: any) => {
 export default Project;
 
 export async function getStaticPaths() {
-  const slugs = Projects.getAllProjects().map(p => p.attributes.slug);
+  const slugs = Projects.getAll().map(p => p.attributes.slug);
   console.log(slugs)
   return {
     paths: slugs.map((slug: string) => ({
@@ -38,7 +38,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: { params: { title: string } }) {
-  const project = Projects.getProject(params.title);
-  const author = Author.getAuthor();
+  const project = Projects.get(params.title);
+  const author = Author.getMe();
   return { props: { project, author } };
 }

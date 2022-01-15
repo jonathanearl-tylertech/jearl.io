@@ -1,19 +1,15 @@
-import fs from 'fs';
-import path from 'path';
-import fm, { FrontMatterResult} from 'front-matter';
-
+import FMLoader from './fm-loader';
+import { FrontMatterResult } from 'front-matter';
 
 class Author {
   author: FrontMatterResult<any>;
 
   constructor() {
-    const root = process.cwd();
-    const authorFile = fs.readFileSync(path.join(root, '_profiles', 'whattheearl.md'), 'utf-8');
-    const author = fm(authorFile);
-    this.author = author;
+    const author = FMLoader.loadFolder('_profiles');
+    this.author = author[0];
   }
 
-  getAuthor() {
+  getMe() {
     return this.author;
   }
 }

@@ -5,7 +5,7 @@ import styles from '../../styles/BlogPost.module.css';
 import Header from '../../components/Header';
 import Author from '../../lib/author';
 import Posts from '../../lib/posts';
-import BlogHeader from '../../components/BlogHeader';
+// import BlogHeader from '../../components/BlogHeader';
 
 const Post = ({ author, post }: any) => {
   return (
@@ -15,7 +15,7 @@ const Post = ({ author, post }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header title={post.attributes.title}/>
-      <BlogHeader title={post.attributes.title} date={post.attributes.date} icon={post.attributes.icon} username={author.attributes.username}/>
+      {/* <BlogHeader title={post.attributes.title} date={post.attributes.date} icon={post.attributes.icon} username={author.attributes.username}/> */}
       <main className={styles.main}>
         <ReactMarkdown>{post.body}</ReactMarkdown>
       </main>
@@ -25,7 +25,7 @@ const Post = ({ author, post }: any) => {
 export default Post;
 
 export async function getStaticPaths() {
-  const slugs = Posts.getAllPosts().map(p => p.attributes.slug);
+  const slugs = Posts.getAll().map(p => p.attributes.slug);
   return {
     paths: slugs.map((slug: string) => ({
       params: {
@@ -37,7 +37,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: { params: { title: string } }) {
-  const post = Posts.getPost(params.title);
-  const author = Author.getAuthor();
+  const post = Posts.get(params.title);
+  const author = Author.getMe();
   return { props: { post, author } };
 }

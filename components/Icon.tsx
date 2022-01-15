@@ -1,6 +1,8 @@
-const Icon = ({ icon }: any) => {
+const Icon = ({ icon, size }: any) => {
+  const heightAndWidth = `${size}px`;
+  const fontSize = `${size * 0.9}px`
   return (
-    <div style={{height: "32px", width: "32px", fontSize: "21px", display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+    <div style={{ height: heightAndWidth, width: heightAndWidth, fontSize, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       {icon}
     </div>
   )

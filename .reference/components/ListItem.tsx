@@ -2,11 +2,10 @@ import styles from '../styles/BlogList.module.css';
 import Icon from './Icon';
 import Link from 'next/link';
 
-const ListItem = ({ post }: any) => {
-  const title = post.attributes.title;
-  const date = new Date(post.attributes.date).toLocaleDateString();
-  const icon = post.attributes.icon;
-  const url = `/blog/${post.attributes.slug}`;
+const ListItem = ({ page, url }: any) => {
+  const title = page.attributes.title;
+  const date = new Date(page.attributes.date).toLocaleDateString();
+  const icon = page.attributes.icon;
   return (
     <Link href={url} passHref={true}> 
       <li className={styles.item}>
