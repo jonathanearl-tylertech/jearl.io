@@ -17,6 +17,9 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@v2
     
+    - name: Prepare Repository
+      run: git fetch --unshallow --tags
+    
     - name: Setup Node
       uses: actions/setup-node@v2
       with:
@@ -44,5 +47,4 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
-        git fetch --unshallow --tags
         npm run release
