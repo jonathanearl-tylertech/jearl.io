@@ -39,11 +39,11 @@ jobs:
         role-to-assume: arn:aws:iam::682471220577:role/PUBLISH_TO_S3
         role-session-name: MySessionName
     
-    - name: Publish to jearl.io
+    - name: Publish to S3 bucket jearl.io
       run: |
         aws s3 sync ./out s3://jearl.io
 
-    - name: Release
+    - name: Publish Release to Github
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
