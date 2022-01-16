@@ -8,9 +8,6 @@ const BlogListItem = ({ post, url }: any) => {
   const month = date.toLocaleString('default', { month: 'long' }).substring(0, 3);
   const day = date.getDate();
   const year = date.getFullYear();
-  console.log(month)
-  const icon = post.attributes.icon;
-  const image = post.attributes?.image;
   return (
     <li className={styles.row}>
       <Link href={url} passHref={true}>
@@ -29,13 +26,6 @@ const BlogListItem = ({ post, url }: any) => {
           </a>
         </article>
       </Link>
-      {/* <div className={styles.itemIcon}>
-          <Icon icon={icon} />
-        </div>
-        <div className={styles.itemTitleContainer}>
-          <a className={styles.itemTitle}>{title}</a>
-          <span className={styles.itemDate}>{date}</span>
-        </div> */}
     </li>
   );
 }

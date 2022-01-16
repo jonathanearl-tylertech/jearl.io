@@ -7,6 +7,7 @@ import Author from '../../lib/author';
 import Posts from '../../lib/posts';
 // import BlogHeader from '../../components/BlogHeader';
 
+
 const Post = ({ author, post }: any) => {
   return (
     <div className={styles.container}>
@@ -29,15 +30,15 @@ export async function getStaticPaths() {
   return {
     paths: slugs.map((slug: string) => ({
       params: {
-        title: slug,
+        slug,
       },
     })),
     fallback: false,
   }
 }
 
-export async function getStaticProps({ params }: { params: { title: string } }) {
-  const post = Posts.get(params.title);
+export async function getStaticProps({ params }: { params: { slug: string } }) {
+  const post = Posts.get(params.slug);
   const author = Author.getMe();
   return { props: { post, author } };
 }

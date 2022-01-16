@@ -26,7 +26,6 @@ export default Project;
 
 export async function getStaticPaths() {
   const slugs = Projects.getAll().map(p => p.attributes.slug);
-  console.log(slugs)
   return {
     paths: slugs.map((slug: string) => ({
       params: {
