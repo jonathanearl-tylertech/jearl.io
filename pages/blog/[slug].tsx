@@ -1,4 +1,3 @@
-
 import ReactMarkdown from 'react-markdown';
 import Head from 'next/head';
 import styles from '../../styles/BlogPost.module.css';
@@ -7,7 +6,6 @@ import Author from '../../lib/author';
 import Posts from '../../lib/posts';
 // import BlogHeader from '../../components/BlogHeader';
 
-
 const Post = ({ author, post }: any) => {
   return (
     <div className={styles.container}>
@@ -15,9 +13,9 @@ const Post = ({ author, post }: any) => {
         <title>{post.attributes.title} | jearl</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header title={post.attributes.title}/>
-      {/* <BlogHeader title={post.attributes.title} date={post.attributes.date} icon={post.attributes.icon} username={author.attributes.username}/> */}
+      <Header title={"Post"} back={true} />
       <main className={styles.main}>
+        <h1>{post.attributes.title}</h1>
         <ReactMarkdown>{post.body}</ReactMarkdown>
       </main>
     </div>
@@ -28,11 +26,7 @@ export default Post;
 export async function getStaticPaths() {
   const slugs = Posts.getAll().map(p => p.attributes.slug);
   return {
-    paths: slugs.map((slug: string) => ({
-      params: {
-        slug,
-      },
-    })),
+    paths: slugs.map((slug: string) => ({ params: { slug, } })),
     fallback: false,
   }
 }

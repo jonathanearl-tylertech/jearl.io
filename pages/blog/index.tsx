@@ -16,13 +16,13 @@ const Blog = ({ posts }: any) => {
       <title>Blog | jearl</title>
       <link rel="icon" href="/favicons/blog/favicon.ico" />
     </Head>
-    <Header title="Blog" />
+    <Header title="Blog" back={false} />
     <main>
-    <section className={styles.container}>
-      <ol className={styles.list} >
-        {blogListItems}
-      </ol>
-    </section>
+      <section className={styles.container}>
+        <ol className={styles.list} >
+          {blogListItems}
+        </ol>
+      </section>
     </main>
   </>)
 }

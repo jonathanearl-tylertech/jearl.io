@@ -1,9 +1,12 @@
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import styles from '../styles/Header.module.css'
 
-const Header = ({ title }: { title: string }) => {
+const Header = ({ title, back }: { title: string, back: boolean }) => {
+  const router = useRouter();
+
   return (
-    <header className={styles.container}>
+    <header className={styles.container} onClick={() => router.push('/blog')}>
+      {back ? <span className={styles.back}>👈</span> : null}
       <span className={styles.title}>{title}</span>
     </header>
   )
