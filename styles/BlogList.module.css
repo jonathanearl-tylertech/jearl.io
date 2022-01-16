@@ -4,17 +4,6 @@
   flex-grow: 1;
 }
 
-.spacer {
-  padding: 0 4px;
-}
-
-.title {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 8px 16px 0px 16px;
-}
-
 .list {
   display: flex;
   flex-direction: column;
@@ -26,13 +15,16 @@
 .authorSection {
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .authorUsername {
+  padding: 0;
+  margin: 0;
   margin-left: 4px;
   color: rgb(41,41,41);
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 .itemContainer {
@@ -44,7 +36,7 @@
 .row {
   display: flex;
   flex-direction: column;
-  margin: 0 24px;
+  margin: 0 24px 32px 24px;
 }
 
 .itemIcon {
@@ -72,6 +64,10 @@
   font-weight: 700;
   font-size: 16px;
   margin: 0;
+  margin-bottom: 4px;
+  overflow: hidden;
+  max-lines: 2;
+  text-overflow: ellipsis;
 }
 
 .itemDate {

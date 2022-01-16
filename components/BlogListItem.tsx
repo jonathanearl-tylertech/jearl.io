@@ -12,17 +12,16 @@ const BlogListItem = ({ post, url }: any) => {
     <li className={styles.row}>
       <Link href={url} passHref={true}>
         <article>
-          <section className={styles.authorSection}>
-            <Icon icon={'🙎‍♂️'} size={24}/>
-            <span className={styles.authorUsername}>{post.attributes.author.username}</span>
-            <span className={styles.spacer}>·</span>
-            <span className={styles.itemDate}>{`${month} ${day}, ${year}`}</span>
-          </section>
           <a className={styles.itemContainer}>
             <div>
+              <div className={styles.authorSection}>
+                <Icon icon={'🙎‍♂️'} size={16} />
+                <h4 className={styles.authorUsername}>{post.attributes.author.username}</h4>
+              </div>
               <h3 className={styles.itemTitle}>{title}</h3>
+              <div className={styles.itemDate}>{`${month} ${day}, ${year}`}</div>
             </div>
-            <img src="https://via.placeholder.com/56" alt="placeholder" style={{marginLeft: '24px'}}/>
+            <img src="https://via.placeholder.com/100" alt="placeholder" style={{ maxHeight: '100px', marginLeft: '24px' }} />
           </a>
         </article>
       </Link>

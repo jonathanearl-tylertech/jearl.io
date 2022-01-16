@@ -7,7 +7,7 @@ import { Post } from '../../interfaces/post.interface';
 
 const Blog = ({ posts }: any) => {
   const blogListItems = posts
-    .map((post: any) => ({...post, attributes: { ...post.attributes, date: new Date(post.attributes.date)}}))
+    .map((post: any) => ({ ...post, attributes: { ...post.attributes, date: new Date(post.attributes.date) } }))
     .sort((a: Post, b: Post) => (a.attributes.date.getDate() - b.attributes.date.getDate()))
     .map((post: Post) => (<BlogListItem key={post.attributes.slug} post={post} url={`/blog/${post.attributes.slug}`} />));
 
@@ -18,11 +18,9 @@ const Blog = ({ posts }: any) => {
     </Head>
     <Header title="Blog" back={false} />
     <main>
-      <section className={styles.container}>
-        <ol className={styles.list} >
-          {blogListItems}
-        </ol>
-      </section>
+      <ol className={styles.list} >
+        {blogListItems}
+      </ol>
     </main>
   </>)
 }
