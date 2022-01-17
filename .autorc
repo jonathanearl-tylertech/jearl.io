@@ -1,10 +1,6 @@
 {
   "plugins": [
-    "git-tag",
-    "all-contributors",
-    "conventional-commits",
-    "first-time-contributor",
-    "released"
+    "git-tag"
   ],
   "owner": "whattheearl",
   "repo": "jearl.io",
