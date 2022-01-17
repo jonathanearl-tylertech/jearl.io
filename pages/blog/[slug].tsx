@@ -4,7 +4,6 @@ import styles from '../../styles/BlogPost.module.css';
 import Header from '../../components/Header';
 import Author from '../../lib/author';
 import Posts from '../../lib/posts';
-// import BlogHeader from '../../components/BlogHeader';
 
 const Post = ({ author, post }: any) => {
   return (
