@@ -38,14 +38,11 @@ jobs:
       with:
         aws-region: us-west-2
         role-to-assume: arn:aws:iam::682471220577:role/PUBLISH_TO_S3
-        role-session-name: MySessionName
     
     - name: Publish to S3 bucket jearl.io
-      run: |
-        aws s3 sync ./out s3://jearl.io
+      run: aws s3 sync ./out s3://jearl.io
 
     - name: Publish Release to Github
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        npx auto shipit
+      run: npx auto shipit
