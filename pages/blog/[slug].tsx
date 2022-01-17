@@ -13,7 +13,7 @@ const Post = ({ author, post }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header title={"Post"} back={true} />
-      <main className={styles.main}>
+      <main>
         <h1>{post.attributes.title}</h1>
         <ReactMarkdown>{post.body}</ReactMarkdown>
       </main>
