@@ -28,13 +28,10 @@ jobs:
         cache: 'npm'
 
     - name: Build
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         npm ci
         npm run lint
         npm run build
-        npx auto shipit
 
     # - name: Setup AWS CLI
     #   uses: aws-actions/configure-aws-credentials@v1
@@ -47,8 +44,8 @@ jobs:
     #   run: |
     #     aws s3 sync ./out s3://jearl.io
 
-    # - name: Publish Release to Github
-    #   env:
-    #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
-    #   run: |
-    #     npx auto shipit
+    - name: Publish Release to Github
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        npx auto shipit
