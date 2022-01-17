@@ -1,3 +1,26 @@
+# v1.0.5 (Mon Jan 17 2022)
+
+#### 🐛 Bug Fix
+
+- add breakpoint for larger screens [#9](https://github.com/whattheearl/jearl.io/pull/9) ([@whattheearl](https://github.com/whattheearl))
+
+#### ⚠️ Pushed to `main`
+
+- add basebranch ([@whattheearl](https://github.com/whattheearl))
+- i dont understand omg ([@whattheearl](https://github.com/whattheearl))
+- update token name ([@whattheearl](https://github.com/whattheearl))
+- update rc ([@whattheearl](https://github.com/whattheearl))
+- test non s3 ([@whattheearl](https://github.com/whattheearl))
+- fix tab ([@whattheearl](https://github.com/whattheearl))
+- test admin token ([@whattheearl](https://github.com/whattheearl))
+- update autorc ([@whattheearl](https://github.com/whattheearl))
+
+#### Authors: 1
+
+- Jonathan Earl ([@whattheearl](https://github.com/whattheearl))
+
+---
+
 # v1.0.4 (Mon Jan 17 2022)
 
 #### 🐛 Bug Fix
