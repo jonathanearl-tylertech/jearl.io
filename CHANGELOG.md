@@ -1,3 +1,20 @@
+# v1.0.8 (Mon Jan 17 2022)
+
+#### ⚠️ Pushed to `main`
+
+- give write to contents ([@whattheearl](https://github.com/whattheearl))
+- use lts node ([@whattheearl](https://github.com/whattheearl))
+- resume build ([@whattheearl](https://github.com/whattheearl))
+- add id-token permission ([@whattheearl](https://github.com/whattheearl))
+- Merge branch 'main' of github.com:whattheearl/jearl.io into main ([@whattheearl](https://github.com/whattheearl))
+- add back publish to s3 ([@whattheearl](https://github.com/whattheearl))
+
+#### Authors: 1
+
+- Jonathan Earl ([@whattheearl](https://github.com/whattheearl))
+
+---
+
 # v1.0.7 (Mon Jan 17 2022)
 
 #### ⚠️ Pushed to `main`
