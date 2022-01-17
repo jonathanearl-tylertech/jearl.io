@@ -1,3 +1,17 @@
+# v1.0.9 (Mon Jan 17 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of github.com:whattheearl/jearl.io into main ([@whattheearl](https://github.com/whattheearl))
+- clean up publish action ([@whattheearl](https://github.com/whattheearl))
+- update lock ([@whattheearl](https://github.com/whattheearl))
+
+#### Authors: 1
+
+- Jonathan Earl ([@whattheearl](https://github.com/whattheearl))
+
+---
+
 # v1.0.8 (Mon Jan 17 2022)
 
 #### ⚠️ Pushed to `main`
