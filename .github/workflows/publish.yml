@@ -9,9 +9,9 @@ jobs:
   release:
     name: Build and Release
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
+    # permissions:
+    #   id-token: write
+    #   contents: read
 
     steps:
     - name: Checkout Repo
@@ -48,5 +48,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        echo $GITHUB_TOKEN
         npx auto shipit
