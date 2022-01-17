@@ -1,3 +1,17 @@
+# v1.0.7 (Mon Jan 17 2022)
+
+#### ⚠️ Pushed to `main`
+
+- manual ([@whattheearl](https://github.com/whattheearl))
+- test ([@whattheearl](https://github.com/whattheearl))
+- latest ([@whattheearl](https://github.com/whattheearl))
+
+#### Authors: 1
+
+- Jonathan Earl ([@whattheearl](https://github.com/whattheearl))
+
+---
+
 # v1.0.6 (Mon Jan 17 2022)
 
 #### ⚠️ Pushed to `main`
