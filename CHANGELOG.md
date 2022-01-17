@@ -1,3 +1,16 @@
+# v1.0.6 (Mon Jan 17 2022)
+
+#### ⚠️ Pushed to `main`
+
+- release only ([@whattheearl](https://github.com/whattheearl))
+- remove unused footer ([@whattheearl](https://github.com/whattheearl))
+
+#### Authors: 1
+
+- Jonathan Earl ([@whattheearl](https://github.com/whattheearl))
+
+---
+
 # v1.0.5 (Mon Jan 17 2022)
 
 #### 🐛 Bug Fix
