@@ -1,3 +1,17 @@
+# v1.0.3 (Sun Jan 16 2022)
+
+#### ⚠️ Pushed to `main`
+
+- config github bot ([@whattheearl](https://github.com/whattheearl))
+- test publish ([@whattheearl](https://github.com/whattheearl))
+- fix auto release ([@whattheearl](https://github.com/whattheearl))
+
+#### Authors: 1
+
+- Jonathan Earl ([@whattheearl](https://github.com/whattheearl))
+
+---
+
 # v1.0.2 (Sun Jan 16 2022)
 
 #### 🐛 Bug Fix
