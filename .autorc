@@ -1,7 +1,7 @@
 {
   "baseBranch": "main",
   "plugins": [
-    "git-tag"
+    "released"
   ],
   "owner": "whattheearl",
   "repo": "jearl.io",
