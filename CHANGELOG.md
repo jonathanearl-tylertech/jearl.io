@@ -7,6 +7,26 @@
 
 #### ⚠️ Pushed to `main`
 
+- fix width issue ([@whattheearl](https://github.com/whattheearl))
+- move fetch up the call order ([@whattheearl](https://github.com/whattheearl))
+- maybe token must match github config ([@whattheearl](https://github.com/whattheearl))
+- test ([@whattheearl](https://github.com/whattheearl))
+
+#### Authors: 1
+
+- Jonathan Earl ([@whattheearl](https://github.com/whattheearl))
+
+---
+
+# v1.0.4 (Mon Jan 17 2022)
+
+#### 🐛 Bug Fix
+
+- non-change change [#8](https://github.com/whattheearl/jearl.io/pull/8) ([@whattheearl](https://github.com/whattheearl))
+- test [#7](https://github.com/whattheearl/jearl.io/pull/7) ([@whattheearl](https://github.com/whattheearl))
+
+#### ⚠️ Pushed to `main`
+
 - move fetch up the call order ([@whattheearl](https://github.com/whattheearl))
 - maybe token must match github config ([@whattheearl](https://github.com/whattheearl))
 - test ([@whattheearl](https://github.com/whattheearl))
