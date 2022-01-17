@@ -47,4 +47,4 @@ jobs:
     - name: Publish Release to Github
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      run: npx auto shipit
+      run: npx auto release
