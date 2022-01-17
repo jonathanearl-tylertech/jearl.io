@@ -47,4 +47,4 @@ jobs:
     - name: Publish Release to Github
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      run: npx auto release
+      run: npx auto latest
