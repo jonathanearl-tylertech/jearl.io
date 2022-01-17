@@ -2,6 +2,27 @@
 
 #### ⚠️ Pushed to `main`
 
+- remove permissions ([@whattheearl](https://github.com/whattheearl))
+- do you exist ([@whattheearl](https://github.com/whattheearl))
+- why ([@whattheearl](https://github.com/whattheearl))
+- update lock ([@whattheearl](https://github.com/whattheearl))
+- try node 14 ([@whattheearl](https://github.com/whattheearl))
+- why do you hate me ([@whattheearl](https://github.com/whattheearl))
+- default token ([@whattheearl](https://github.com/whattheearl))
+- test ([@whattheearl](https://github.com/whattheearl))
+- manual ([@whattheearl](https://github.com/whattheearl))
+- latest ([@whattheearl](https://github.com/whattheearl))
+
+#### Authors: 1
+
+- Jonathan Earl ([@whattheearl](https://github.com/whattheearl))
+
+---
+
+# v1.0.7 (Mon Jan 17 2022)
+
+#### ⚠️ Pushed to `main`
+
 - manual ([@whattheearl](https://github.com/whattheearl))
 - test ([@whattheearl](https://github.com/whattheearl))
 - latest ([@whattheearl](https://github.com/whattheearl))
