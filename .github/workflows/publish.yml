@@ -15,7 +15,10 @@ jobs:
 
     steps:
     - name: Checkout Repo
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v2
+      with:
+        # Ensure that git uses your token with admin access to the repo
+        token: ${{ secrets.GH_TOKEN }
 
     - name: Prepare Repository
       # Fetch full git history and tags
