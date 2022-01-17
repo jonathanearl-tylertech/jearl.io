@@ -7,7 +7,7 @@ import Posts from '../../lib/posts';
 
 const Post = ({ author, post }: any) => {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>{post.attributes.title} | jearl</title>
         <link rel="icon" href="/favicon.ico" />
@@ -15,9 +15,10 @@ const Post = ({ author, post }: any) => {
       <Header title={"Post"} back={true} />
       <main>
         <h1>{post.attributes.title}</h1>
+        <h2>{author.username}</h2>
         <ReactMarkdown>{post.body}</ReactMarkdown>
       </main>
-    </div>
+    </>
   );
 }
 export default Post;

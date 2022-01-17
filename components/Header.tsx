@@ -5,7 +5,7 @@ const Header = ({ title, back }: { title: string, back: boolean }) => {
   const router = useRouter();
 
   return (
-    <header onClick={() => router.push('/blog')}>
+    <header className={styles.header} onClick={() => router.push('/blog')}>
       {back ? <span className={styles.back}>👈</span> : null}
       <span className={styles.title}>{title}</span>
     </header>
