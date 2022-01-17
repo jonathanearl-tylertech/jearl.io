@@ -16,9 +16,6 @@ jobs:
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v2
-      with:
-        # Ensure that git uses your token with admin access to the repo
-        token: ${{ secrets.GH_TOKEN }
 
     - name: Prepare Repository
       # Fetch full git history and tags
@@ -36,16 +33,16 @@ jobs:
         npm run lint
         npm run build
 
-    - name: Setup AWS CLI
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-region: us-west-2
-        role-to-assume: arn:aws:iam::682471220577:role/PUBLISH_TO_S3
-        role-session-name: MySessionName
-    
-    - name: Publish to S3 bucket jearl.io
-      run: |
-        aws s3 sync ./out s3://jearl.io
+    # - name: Setup AWS CLI
+    #   uses: aws-actions/configure-aws-credentials@v1
+    #   with:
+    #     aws-region: us-west-2
+    #     role-to-assume: arn:aws:iam::682471220577:role/PUBLISH_TO_S3
+    #     role-session-name: MySessionName
+    # 
+    # - name: Publish to S3 bucket jearl.io
+    #   run: |
+    #     aws s3 sync ./out s3://jearl.io
 
     - name: Publish Release to Github
       env:
