@@ -29,7 +29,7 @@ jobs:
 
     - name: Build
       env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         npm ci
         npm run lint
