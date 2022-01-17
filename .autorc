@@ -1,11 +1,6 @@
 {
-  "plugins": [
-    "git-tag",
-    "all-contributors",
-    "conventional-commits",
-    "first-time-contributor",
-    "released"
-  ],
+  "author": "jonathan earl <earl.jonathan@gmail.com>",
+  "plugins": ["git-tag"],
   "owner": "whattheearl",
   "repo": "jearl.io",
   "name": "github-actions[bot]",
