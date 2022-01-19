@@ -45,4 +45,4 @@ jobs:
     - name: Publish Release to Github
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: npx auto canary
+      run: npx auto canary # no change
