@@ -18,10 +18,13 @@ class FMLoader {
     }
 
     private getSlug(title: string): string {
-        if (!title) {
-            return ''
+        try {
+            console.log('title', title)
+            return title.toLowerCase().replaceAll(' ', '-');
+        } catch (err) {
+            console.error(err);
+            return '';
         }
-        return title.toLowerCase().replaceAll(' ', '-');
     }
 }
 
