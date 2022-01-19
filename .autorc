@@ -1,6 +1,6 @@
 {
   "author": "jonathan earl <earl.jonathan@gmail.com>",
-  "plugins": ["git-tag", "canary"],
+  "plugins": ["git-tag"],
   "owner": "whattheearl",
   "repo": "jearl.io",
   "name": "github-actions[bot]",
