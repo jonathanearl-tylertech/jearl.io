@@ -1,3 +1,16 @@
+# v1.0.10 (Wed Jan 19 2022)
+
+#### ⚠️ Pushed to `main`
+
+- add back git tag ([@whattheearl](https://github.com/whattheearl))
+- test remove plugins ([@whattheearl](https://github.com/whattheearl))
+
+#### Authors: 1
+
+- Jonathan Earl ([@whattheearl](https://github.com/whattheearl))
+
+---
+
 # v1.0.9 (Mon Jan 17 2022)
 
 #### ⚠️ Pushed to `main`
