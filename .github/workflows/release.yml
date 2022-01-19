@@ -1,13 +1,10 @@
-name: Build and Release
+name: pre-release
 
-on:
-  push:
-    branches:
-      - main
+on: [pull_request]
 
 jobs:          
-  release:
-    name: Build and Release
+  pre-release:
+    name: pre-release
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -40,7 +37,7 @@ jobs:
         role-to-assume: arn:aws:iam::682471220577:role/PUBLISH_TO_S3
     
     - name: Publish to S3 bucket jearl.io
-      run: aws s3 sync ./out s3://jearl.io
+      run: aws s3 sync ./out s3://ci.jearl.io
 
     - name: Publish Release to Github
       env:
