@@ -1,6 +1,6 @@
 {
   "name": "jearl.io",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "next dev -p 8080",
     "build": "next build && next export",
@@ -18,10 +18,11 @@
     "remark-html": "^15.0.1"
   },
   "devDependencies": {
-    "auto": "^10.32.5",
     "@auto-it/git-tag": "^10.32.5",
+    "@auto-it/released": "^10.32.5",
     "@types/node": "16.11.11",
     "@types/react": "17.0.37",
+    "auto": "^10.32.5",
     "eslint": "7.32.0",
     "eslint-config-next": "12.0.4",
     "typescript": "4.5.2"
