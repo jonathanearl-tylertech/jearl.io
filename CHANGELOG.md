@@ -1,3 +1,17 @@
+# v1.0.11 (Wed Jan 19 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of https://github.com/whattheearl/jearl.io ([@whattheearl](https://github.com/whattheearl))
+- add ci release ([@whattheearl](https://github.com/whattheearl))
+- rename release ([@whattheearl](https://github.com/whattheearl))
+
+#### Authors: 1
+
+- Jonathan Earl ([@whattheearl](https://github.com/whattheearl))
+
+---
+
 # v1.0.10 (Wed Jan 19 2022)
 
 #### ⚠️ Pushed to `main`
