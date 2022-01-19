@@ -1,9 +1,6 @@
-name: Build and Release
+name: pre-release
 
-on:
-  push:
-    branches:
-      - main
+on: [pull_request]
 
 jobs:          
   release:
@@ -39,8 +36,8 @@ jobs:
         aws-region: us-west-2
         role-to-assume: arn:aws:iam::682471220577:role/PUBLISH_TO_S3
     
-    - name: Publish to S3 bucket jearl.io
-      run: aws s3 sync ./out s3://jearl.io
+    - name: Publish to S3 bucket ci.jearl.io
+      run: aws s3 sync ./out s3://ci.jearl.io
 
     - name: Publish Release to Github
       env:
