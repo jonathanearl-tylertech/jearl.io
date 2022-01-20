@@ -1,3 +1,20 @@
+# v1.0.12 (Thu Jan 20 2022)
+
+#### 🐛 Bug Fix
+
+- rename actions [#12](https://github.com/whattheearl/jearl.io/pull/12) ([@whattheearl](https://github.com/whattheearl))
+- update names [#10](https://github.com/whattheearl/jearl.io/pull/10) ([@whattheearl](https://github.com/whattheearl))
+
+#### ⚠️ Pushed to `main`
+
+- remove incorrect plugin ([@whattheearl](https://github.com/whattheearl))
+
+#### Authors: 1
+
+- Jonathan Earl ([@whattheearl](https://github.com/whattheearl))
+
+---
+
 # v1.0.11 (Wed Jan 19 2022)
 
 #### ⚠️ Pushed to `main`
