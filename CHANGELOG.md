@@ -1,3 +1,15 @@
+# v1.0.13 (Sat Jan 22 2022)
+
+#### ⚠️ Pushed to `main`
+
+- always deploy to ci ([@whattheearl](https://github.com/whattheearl))
+
+#### Authors: 1
+
+- Jonathan Earl ([@whattheearl](https://github.com/whattheearl))
+
+---
+
 # v1.0.12 (Thu Jan 20 2022)
 
 #### 🐛 Bug Fix
