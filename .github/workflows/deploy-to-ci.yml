@@ -1,6 +1,6 @@
 name: deploy to ci
 
-on: [pull_request]
+on: [push]
 
 jobs:          
   deploy-to-ci:
