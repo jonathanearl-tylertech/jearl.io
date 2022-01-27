@@ -5,8 +5,47 @@ on:
     branches:
       - main
 
-jobs:          
+jobs:
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+  
+    steps:
+    - name: checkout repo
+      uses: actions/checkout@v2
+
+    - name: setup node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+        cache: 'npm'
+
+    - name: lint
+      run: |
+        npm ci
+        npm run lint
+
+  test:
+    name: test
+    runs-on: ubuntu-latest
+  
+    steps:
+    - name: checkout repo
+      uses: actions/checkout@v2
+
+    - name: setup node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+        cache: 'npm'
+
+    - name: test
+      run: |
+        npm ci
+        npm run test --if-present
+
   deploy-to-prod:
+    needs: [lint, test]
     name: deploy-to-prod
     runs-on: ubuntu-latest
     permissions:
