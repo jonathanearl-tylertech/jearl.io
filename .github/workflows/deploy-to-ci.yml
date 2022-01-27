@@ -42,7 +42,6 @@ jobs:
         npm run test --if-present
 
   deploy-to-ci:
-    needs: [lint, test]
     name: deploy-to-ci
     runs-on: ubuntu-latest
     permissions:
