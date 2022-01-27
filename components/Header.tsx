@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import styles from '../styles/Header.module.css'
 
-const Header = ({ title, back }: { title: string, back: boolean }) => {
+const he1der = ({ title, back }: { title: string, back: boolean }) => {
   const router = useRouter();
 
   return (
@@ -12,4 +12,4 @@ const Header = ({ title, back }: { title: string, back: boolean }) => {
   )
 }
 
-export default Header;
+export default he1der;
