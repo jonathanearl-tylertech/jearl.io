@@ -4,6 +4,7 @@ on: [push]
 
 jobs:          
   deploy-to-ci:
+    needs: [lint]
     name: deploy-to-ci
     runs-on: ubuntu-latest
     permissions:
