@@ -2,7 +2,45 @@ name: deploy to ci
 
 on: [push]
 
-jobs:          
+jobs:
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+  
+    steps:
+    - name: checkout repo
+      uses: actions/checkout@v2
+
+    - name: setup node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+        cache: 'npm'
+
+    - name: lint
+      run: |
+        npm ci
+        npm run lint
+
+  test:
+    name: test
+    runs-on: ubuntu-latest
+  
+    steps:
+    - name: checkout repo
+      uses: actions/checkout@v2
+
+    - name: setup node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+        cache: 'npm'
+
+    - name: test
+      run: |
+        npm ci
+        npm run test --if-present
+
   deploy-to-ci:
     name: deploy-to-ci
     runs-on: ubuntu-latest
@@ -27,7 +65,6 @@ jobs:
     - name: build
       run: |
         npm ci
-        npm run lint
         npm run build
 
     - name: setup aws cli
