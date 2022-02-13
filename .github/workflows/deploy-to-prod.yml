@@ -38,7 +38,7 @@ jobs:
       contents: write
     defaults:
       run:
-        working-directory: ./jearl.io  
+        working-directory: ./jearl.io
 
     steps:
     - name: checkout repo
@@ -53,6 +53,7 @@ jobs:
       with:
         node-version: '16'
         cache: 'npm'
+        cache-dependency-path: '**/package-lock.json'
 
     - name: build
       run: |
