@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  test:
+  run-lint-and-tests:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -29,9 +29,8 @@ jobs:
         npm run lint
         npm run test --if-present
 
-  deploy-to-prod:
+  build-and-deploy-to-s3:
     needs: [test]
-    name: deploy-to-prod
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -45,7 +44,6 @@ jobs:
       uses: actions/checkout@v2
 
     - name: prepare repo
-      # Fetch full git history and tags
       run: git fetch --unshallow --tags
     
     - name: setup node
@@ -66,7 +64,7 @@ jobs:
         aws-region: us-west-2
         role-to-assume: arn:aws:iam::682471220577:role/PUBLISH_TO_S3
     
-    - name: deploy to prod (jearl.io)
+    - name: deploy to s3 (jearl.io)
       run: aws s3 sync ./out s3://jearl.io
 
     - name: release to github
