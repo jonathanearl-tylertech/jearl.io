@@ -7,9 +7,11 @@ on:
 
 jobs:
   lint:
-    name: lint
     runs-on: ubuntu-latest
-  
+    defaults:
+      run:
+        working-directory: ./jearl.io
+
     steps:
     - name: checkout repo
       uses: actions/checkout@v2
@@ -26,9 +28,11 @@ jobs:
         npm run lint
 
   test:
-    name: test
     runs-on: ubuntu-latest
-  
+    defaults:
+      run:
+        working-directory: ./jearl.io  
+        
     steps:
     - name: checkout repo
       uses: actions/checkout@v2
@@ -51,6 +55,9 @@ jobs:
     permissions:
       id-token: write
       contents: write
+    defaults:
+      run:
+        working-directory: ./jearl.io  
 
     steps:
     - name: checkout repo
