@@ -30,7 +30,7 @@ jobs:
         npm run test --if-present
 
   deploy-to-prod:
-    needs: [lint, test]
+    needs: [test]
     name: deploy-to-prod
     runs-on: ubuntu-latest
     permissions:
