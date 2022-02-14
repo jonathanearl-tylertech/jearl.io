@@ -23,21 +23,21 @@ jobs:
         cache: 'npm'
         cache-dependency-path: '**/package-lock.json'
 
-    - name: test
+    - name: run lint and test
       run: |
         npm ci
         npm run lint
         npm run test --if-present
 
-  build-and-deploy-to-s3:
+  build-and-publish-to-dockerhub:
     needs: [run-lint-and-tests]
     runs-on: ubuntu-latest
     permissions:
       id-token: write
       contents: write
-    defaults:
-      run:
-        working-directory: ./jearl.io
+    # defaults:
+    #   run:
+    #     working-directory: ./jearl.io
 
     steps:
     - name: checkout repo
