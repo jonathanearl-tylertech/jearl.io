@@ -55,44 +55,46 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    - name: Build and push
+    - name: Build and Push to Dockerhub
       uses: docker/build-push-action@v2
       with:
         context: .
         target: server
         cache-from: type=gha
+        cache-to: type=gha
         platforms: linux/amd64,linux/arm64
         push: true
         tags: whattheearl/jearl.io:latest
 
-  publish-to-github:
+  publish-release-to-github:
     needs: [publish-to-dockerhub]
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: write
-    defaults:
-      run:
-        working-directory: ./jearl.io
-    
+
     steps:
-    - name: checkout repo
+    - name: Checkout Repo
       uses: actions/checkout@v2
 
-    - name: Prepare Repo
-      run: git fetch --unshallow --tags
-    
-    - name: Setup Node
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
-        cache: 'npm'
-        cache-dependency-path: '**/package-lock.json'
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v1
 
-    - name: Release to Github
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: npx auto shipit
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+      
+    - name: Login to DockerHub
+      uses: docker/login-action@v1 
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Publish Changelog and Version to Github
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        target: releaser
+        cache-from: type=gha
+        cache-to: type=gha
+        platforms: linux/amd64
+        push: false
 
     # - name: setup aws cli
     #   uses: aws-actions/configure-aws-credentials@v1
