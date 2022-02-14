@@ -67,6 +67,9 @@ jobs:
       contents: write
     
     steps:
+    - name: checkout repo
+      uses: actions/checkout@v2
+
     - name: Prepare Repo
       run: git fetch --unshallow --tags
     
