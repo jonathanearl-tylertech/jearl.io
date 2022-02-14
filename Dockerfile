@@ -12,11 +12,13 @@ COPY --from=tester /app/ /app/
 RUN npm run build
 
 FROM --platform=linux/amd64 node:16-alpine as releaser
+ARG TEST
 WORKDIR /app/jearl.io
 COPY ./ /app/
 RUN apk add git
 RUN git fetch --unshallow --tags
 RUN npm ci
+RUN echo ${TEST}
 RUN echo "$MY_VAR"
 RUN echo `$GITHUB-TOKEN $GH_TOKEN`
 RUN npx auto shipit

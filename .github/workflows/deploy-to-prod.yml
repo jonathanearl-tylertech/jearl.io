@@ -84,6 +84,8 @@ jobs:
     - name: Publish Changelog and Version to Github
       uses: docker/build-push-action@v2
       with:
+        build-args:
+          - TEST:justatest
         context: .
         github-token: test123
         target: releaser
