@@ -43,31 +43,48 @@ jobs:
     - name: checkout repo
       uses: actions/checkout@v2
 
-    - name: prepare repo
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v1
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+      
+    - name: Login to DockerHub
+      uses: docker/login-action@v1 
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+    
+    - name: Build and push
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        platforms: linux/amd64,linux/arm64
+        push: true
+        tags: whattheearl/jearl.io:latest
+
+    - name: Prepare Repo
       run: git fetch --unshallow --tags
     
-    - name: setup node
+    - name: Setup Node
       uses: actions/setup-node@v2
       with:
         node-version: '16'
         cache: 'npm'
         cache-dependency-path: '**/package-lock.json'
 
-    - name: build
-      run: |
-        npm ci
-        npm run build
-
-    - name: setup aws cli
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-region: us-west-2
-        role-to-assume: arn:aws:iam::682471220577:role/PUBLISH_TO_S3
-    
-    - name: deploy to s3 (jearl.io)
-      run: aws s3 sync ./out s3://jearl.io
-
-    - name: release to github
+    - name: Release to Github
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: npx auto shipit
+      run: |
+        npm ci
+        npx auto shipit
+
+    # - name: setup aws cli
+    #   uses: aws-actions/configure-aws-credentials@v1
+    #   with:
+    #     aws-region: us-west-2
+    #     role-to-assume: arn:aws:iam::682471220577:role/PUBLISH_TO_S3
+    
+    # - name: deploy to s3 (jearl.io)
+    #   run: aws s3 sync ./out s3://jearl.io
