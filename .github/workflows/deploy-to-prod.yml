@@ -63,9 +63,6 @@ jobs:
     permissions:
       id-token: write
       contents: write
-    defaults:
-      run:
-        working-directory: ./jearl.io
     
     steps:
     - name: Prepare Repo
