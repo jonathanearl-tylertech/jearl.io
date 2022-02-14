@@ -8,8 +8,8 @@ RUN npm run build
 FROM node:16-alpine as tester
 WORKDIR /app
 COPY --from=builder /app/ /app/
-RUN npm run lint
-RUN npm run test
+RUN npm run lint --if-present
+RUN npm run test --if-present
 
 FROM nginx:1.20-alpine as server
 EXPOSE 80
