@@ -25,16 +25,15 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     
-    - name: Lint and Test
+    - name: Lint, Test and Build
       uses: docker/build-push-action@v2
       with:
         context: .
-        target: tester
-        cache-from: type=registry,ref=whattheearl/jearl.io:latest
-        cache-to: type=inline
+        target: builder
+        cache-from: type=gha
+        cache-to: type=gha
         platforms: linux/amd64
         push: false
-        tags: whattheearl/jearl.io:latest
 
   publish-to-dockerhub:
     needs: [run-lint-and-tests]
@@ -55,14 +54,13 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-    
+
     - name: Build and push
       uses: docker/build-push-action@v2
       with:
         context: .
         target: server
-        cache-from: type=registry,ref=whattheearl/jearl.io:latest
-        cache-to: type=inline
+        cache-from: type=gha
         platforms: linux/amd64,linux/arm64
         push: true
         tags: whattheearl/jearl.io:latest
