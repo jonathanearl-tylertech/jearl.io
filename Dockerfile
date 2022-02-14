@@ -17,7 +17,7 @@ COPY ./ /app/
 RUN apk add git
 RUN git fetch --unshallow --tags
 RUN npm ci
-ENV GH_TOKEN $GITHUB-TOKEN
+RUN echo "${GITHUB-TOKEN} ${GH_TOKEN}"
 RUN npx auto shipit
 
 FROM nginx:1.20-alpine as server
