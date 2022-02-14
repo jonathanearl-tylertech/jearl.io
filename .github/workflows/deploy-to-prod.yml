@@ -21,7 +21,7 @@ jobs:
       with:
         context: .
         target: builder
-        cache-from: type=gha
+        # cache-from: type=gha
         cache-to: type=gha
         platforms: linux/amd64
         push: false
