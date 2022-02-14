@@ -32,12 +32,6 @@ jobs:
   build-and-publish-to-dockerhub:
     needs: [run-lint-and-tests]
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: write
-    # defaults:
-    #   run:
-    #     working-directory: ./jearl.io
 
     steps:
     - name: checkout repo
@@ -63,6 +57,15 @@ jobs:
         push: true
         tags: whattheearl/jearl.io:latest
 
+  publish-to-github:
+    needs: [build-and-publish-to-dockerhub]
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+    defaults:
+      run:
+        working-directory: ./jearl.io
     - name: Prepare Repo
       run: git fetch --unshallow --tags
     
@@ -76,9 +79,7 @@ jobs:
     - name: Release to Github
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        npm ci
-        npx auto shipit
+      run: npx auto shipit
 
     # - name: setup aws cli
     #   uses: aws-actions/configure-aws-credentials@v1
