@@ -66,6 +66,8 @@ jobs:
     defaults:
       run:
         working-directory: ./jearl.io
+    
+    steps:
     - name: Prepare Repo
       run: git fetch --unshallow --tags
     
