@@ -1,11 +1,11 @@
-FROM node:16-alpine as builder
+FROM --platform=linux/amd64 node:16-alpine as builder
 WORKDIR /app
 COPY ./jearl.io/package*.json /app/
 RUN npm ci
 COPY ./jearl.io/ /app/
 RUN npm run build
 
-FROM node:16-alpine as tester
+FROM --platform=linux/amd64 node:16-alpine as tester
 WORKDIR /app
 COPY --from=builder /app/ /app/
 RUN npm run lint --if-present
