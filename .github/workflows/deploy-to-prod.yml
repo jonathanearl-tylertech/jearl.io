@@ -30,7 +30,7 @@ jobs:
         npm run test --if-present
 
   build-and-deploy-to-s3:
-    needs: [test]
+    needs: [run-lint-and-tests]
     runs-on: ubuntu-latest
     permissions:
       id-token: write
