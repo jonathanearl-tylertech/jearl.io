@@ -29,7 +29,6 @@ RUN git fetch --unshallow --tags
 RUN git config --global user.email github-actions[bot]@users.noreply.github.com
 RUN git config --global user.name github-actions[bot]
 RUN npx auto changelog
-RUN git add jearl.io/CHANGELOG.md
 RUN git push --force
 RUN npx auto shipit --no-changelog
 
