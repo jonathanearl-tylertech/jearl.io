@@ -28,7 +28,7 @@ COPY --from=builder /app/ /app/jearl.io/
 RUN git fetch --unshallow --tags
 RUN git config --global user.email github-actions[bot]@users.noreply.github.com
 RUN git config --global user.name github-actions[bot]
-RUN npm release
+RUN npm run release
 
 FROM nginx:1.20-alpine as server
 EXPOSE 80
