@@ -86,7 +86,7 @@ jobs:
       with:
         build-args: |
           TEST=justatest
-          TEST2=${{secrets.GITHUB_TOKEN}}
+          TOKEN=${{secrets.GITHUB_TOKEN}}
         context: .
         github-token: test123
         target: releaser
