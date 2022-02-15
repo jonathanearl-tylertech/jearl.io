@@ -39,9 +39,9 @@ jobs:
   publish-release-to-github:
     needs: [publish-to-dockerhub]
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: write
+    # permissions:
+    #   id-token: write
+    #   contents: write
 
     steps:
     - name: Checkout Repo
@@ -57,7 +57,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         build-args: |
-          GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN=${{ secrets.GH_TOKEN }}
         context: .
         target: releaser
         cache-from: type=gha
