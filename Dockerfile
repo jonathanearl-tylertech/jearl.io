@@ -4,10 +4,14 @@ COPY ./jearl.io/package*.json /app/
 RUN npm ci
 COPY ./jearl.io/ /app/
 
-FROM --platform=linux/amd64 node:16 as tester
+FROM --platform=linux/amd64 node:16 as linter
 WORKDIR /app
 COPY --from=installer /app/ /app/
 RUN npm run lint --if-present
+
+FROM --platform=linux/amd64 node:16 as tester
+WORKDIR /app
+COPY --from=installer /app/ /app/
 RUN npm run test --if-present
 
 FROM --platform=linux/amd64 node:16 as builder
