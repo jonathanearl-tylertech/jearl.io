@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+  
 jobs:
   publish-to-dockerhub:
     runs-on: ubuntu-latest
@@ -40,7 +43,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      id_token: write
 
     steps:
     - name: Checkout Repo
