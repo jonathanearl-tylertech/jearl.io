@@ -12,8 +12,8 @@ COPY --from=tester /app/ /app/
 RUN npm run build
 
 FROM --platform=linux/amd64 node:16 as releaser
-ARG TOKEN
-ENV GH_TOKEN=$TOKEN
+ARG GITHUB_TOKEN
+ENV GITHUB_TOKEN=$GITHUB_TOKEN
 WORKDIR /app/jearl.io
 COPY ./ /app/
 RUN git fetch --unshallow --tags
