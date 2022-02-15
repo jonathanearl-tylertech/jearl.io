@@ -1,6 +1,6 @@
 name: lint test and build
 
-on:
+on: [push]
 
 jobs:
   lint-test-and-build:
