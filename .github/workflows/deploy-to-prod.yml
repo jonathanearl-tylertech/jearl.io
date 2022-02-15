@@ -37,11 +37,7 @@ jobs:
         tags: whattheearl/jearl.io:latest
 
   publish-release-to-github:
-    needs: [publish-to-dockerhub]
     runs-on: ubuntu-latest
-    # permissions:
-    #   id-token: write
-    #   contents: write
 
     steps:
     - name: Checkout Repo
