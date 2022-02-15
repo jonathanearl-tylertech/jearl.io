@@ -1,6 +1,7 @@
-name: lint test and build
+name: pr-verify
 
-on: [push]
+on: 
+  pull_request:
 
 jobs:
   lint:
