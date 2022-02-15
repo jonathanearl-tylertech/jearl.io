@@ -28,9 +28,7 @@ COPY --from=builder /app/ /app/jearl.io/
 RUN git fetch --unshallow --tags
 RUN git config --global user.email github-actions[bot]@users.noreply.github.com
 RUN git config --global user.name github-actions[bot]
-RUN npx auto changelog
-RUN git push --force
-RUN npx auto shipit --no-changelog
+RUN npx auto shipit
 
 FROM nginx:1.20-alpine as server
 EXPOSE 80
