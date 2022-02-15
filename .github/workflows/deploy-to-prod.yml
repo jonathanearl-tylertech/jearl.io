@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      id_tokens: write
+      id_token: write
 
     steps:
     - name: Checkout Repo
