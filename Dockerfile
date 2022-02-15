@@ -17,6 +17,8 @@ ENV GH_TOKEN=$TOKEN
 WORKDIR /app/jearl.io
 COPY ./ /app/
 RUN git fetch --unshallow --tags
+RUN git config --global user.email github-actions[bot]@users.noreply.github.com
+RUN git config --global user.name github-actions[bot]
 RUN npm ci
 RUN npx auto shipit
 
