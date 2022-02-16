@@ -28,6 +28,9 @@ RUN git config --global user.email jonathan.earl@tylertech.com
 RUN git clone https://${GITHUB_TOKEN}@github.com/whattheearl/jearl.io .
 RUN git fetch --tags
 RUN cd /app/jearl.io
+RUN ls
+RUN $PWD
+RUN npm ci
 RUN npx auto shipit
 
 FROM nginx:1.20-alpine as server
