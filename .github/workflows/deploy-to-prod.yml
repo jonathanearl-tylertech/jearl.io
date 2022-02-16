@@ -5,8 +5,9 @@ on:
     branches:
       - main
 
-# permissions:
-#   contents: write
+permissions:
+  contents: write
+  id-token: write
 
 jobs:
   publish-to-dockerhub:
@@ -41,8 +42,9 @@ jobs:
 
   publish-release-to-github:
     runs-on: ubuntu-latest
-    # permissions:
-    #   contents: write
+    permissions:
+      contents: write
+      id-token: write
 
     steps:
     - name: Checkout Repo
@@ -58,9 +60,8 @@ jobs:
     - name: Publish Changelog and Version to Github
       uses: docker/build-push-action@v2
       with:
-        build-args: |
-          GITHUB_TOKEN=${{ secrets.GH_TOKEN }} 
         context: .
+        github-token: ${{ secrets.GITHUB_TOKEN }}
         target: releaser
         cache-from: type=gha
         platforms: linux/amd64
