@@ -1,3 +1,19 @@
+# v1.0.2 (Wed Feb 16 2022)
+
+#### ⚠️ Pushed to `main`
+
+- gh_token instead? ([@whattheearl](https://github.com/whattheearl))
+- need to install packages ([@whattheearl](https://github.com/whattheearl))
+- Merge branch 'main' of github.com:whattheearl/jearl.io into main ([@whattheearl](https://github.com/whattheearl))
+- try with github_token ([@whattheearl](https://github.com/whattheearl))
+- clean up a bit ([@whattheearl](https://github.com/whattheearl))
+
+#### Authors: 1
+
+- Jonathan Earl ([@whattheearl](https://github.com/whattheearl))
+
+---
+
 # v1.0.1 (Wed Feb 16 2022)
 
 #### 🐛 Bug Fix
