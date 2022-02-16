@@ -25,11 +25,11 @@ ENV GITHUB_TOKEN=${GITHUB_TOKEN}
 WORKDIR /app/
 RUN git config --global user.name "Jonathan Earl"
 RUN git config --global user.email jonathan.earl@tylertech.com
-RUN git clone https://${GITHUB_TOKEN}@github.com/whattheearl/jearl.io .
-RUN git fetch --tags
-RUN cd /app/jearl.io
+RUN git clone https://${GITHUB_TOKEN}@github.com/whattheearl/jearl.io
 RUN ls
-RUN $PWD
+RUN git fetch --tags
+RUN cd ./jearl.io
+RUN ls
 RUN npm ci
 RUN npx auto shipit
 
