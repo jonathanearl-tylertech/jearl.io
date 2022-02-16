@@ -29,7 +29,8 @@ RUN git clone https://${GITHUB_TOKEN}@github.com/whattheearl/jearl.io
 WORKDIR /app/jearl.io
 RUN git fetch --tags https://${GITHUB_TOKEN}@github.com/whattheearl/jearl.io
 WORKDIR /app/jearl.io/jearl.io
-RUN npx auto shipit
+RUN npm ci
+RUN npm run release
 
 FROM nginx:1.20-alpine as server
 EXPOSE 80
