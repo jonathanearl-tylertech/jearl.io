@@ -25,8 +25,8 @@ ENV GITHUB_TOKEN=${GITHUB_TOKEN}
 WORKDIR /app/jearl.io
 COPY ./ /app/
 COPY --from=installer /app/ /app/jearl.io/
-RUN git config --global user.name "github action"
-RUN git config --global user.email action@github.com
+RUN git config --global user.name "Jonathan Earl"
+RUN git config --global user.email jonathan.earl@tylertech.com
 RUN git fetch --tags --unshallow https://${GITHUB_TOKEN}@github.com/whattheearl/jearl.io
 RUN npx auto shipit
 
