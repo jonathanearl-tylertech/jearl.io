@@ -61,7 +61,8 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: .
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        secrets: |
+          "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}"
         target: releaser
         cache-from: type=gha
         platforms: linux/amd64
