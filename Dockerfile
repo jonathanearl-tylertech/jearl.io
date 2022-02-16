@@ -24,7 +24,7 @@ ARG GITHUB_TOKEN
 ENV GITHUB_TOKEN=$GITHUB_TOKEN
 WORKDIR /app/jearl.io
 COPY ./ /app/
-COPY --from=builder /app/ /app/jearl.io/
+COPY --from=installer /app/ /app/jearl.io/
 RUN git fetch --tags --unshallow https://${GITHUB_TOKEN}@github.com/whattheearl/jearl.io :origin/main
 RUN npx auto shipit --name whattheearl --email earl.jonathan@gmail.com
 
