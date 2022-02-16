@@ -23,16 +23,12 @@ FROM --platform=linux/amd64 node:16 as releaser
 WORKDIR /app
 ARG GITHUB_TOKEN
 ENV GITHUB_TOKEN=${GITHUB_TOKEN}
-RUN git config --global user.name "Jonathan Earl"
-RUN git config --global user.email jonathan.earl@tylertech.com
+RUN git config --global user.name "publish bot"
+RUN git config --global user.email publish.bot@github.com
 RUN git clone https://${GITHUB_TOKEN}@github.com/whattheearl/jearl.io
-RUN ls
 WORKDIR /app/jearl.io
-RUN ls
 RUN git fetch --tags https://${GITHUB_TOKEN}@github.com/whattheearl/jearl.io
 WORKDIR /app/jearl.io/jearl.io
-RUN ls
-RUN npm ci
 RUN npx auto shipit
 
 FROM nginx:1.20-alpine as server
