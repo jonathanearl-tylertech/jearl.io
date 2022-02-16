@@ -23,12 +23,11 @@ FROM --platform=linux/amd64 node:16 as releaser
 WORKDIR /app
 ARG GITHUB_TOKEN
 ENV GITHUB_TOKEN=${GITHUB_TOKEN}
-RUN git config --global user.name "publish bot"
-RUN git config --global user.email publish.bot@github.com
-RUN git clone https://${GITHUB_TOKEN}@github.com/whattheearl/jearl.io
-WORKDIR /app/jearl.io
+RUN git config --global user.name "github action"
+RUN git config --global user.email action@github.com
+RUN git clone https://${GITHUB_TOKEN}@github.com/whattheearl/jearl.io .
 RUN git fetch --tags https://${GITHUB_TOKEN}@github.com/whattheearl/jearl.io
-WORKDIR /app/jearl.io/jearl.io
+WORKDIR /app/jearl.io
 RUN npm ci
 RUN npm run release
 
