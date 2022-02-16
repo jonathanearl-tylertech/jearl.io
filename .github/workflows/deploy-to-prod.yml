@@ -62,7 +62,7 @@ jobs:
       with:
         context: .
         build-args: |
-          "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}"
+          "GITHUB_TOKEN=${{ secrets.GH_TOKEN }}"
         target: releaser
         cache-from: type=gha
         platforms: linux/amd64
