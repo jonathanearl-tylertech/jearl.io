@@ -25,13 +25,8 @@ ENV GITHUB_TOKEN=$GITHUB_TOKEN
 WORKDIR /app/jearl.io
 COPY ./ /app/
 COPY --from=builder /app/ /app/jearl.io/
-RUN git config --global user.email "earl.jonathan@gmail.com"
-RUN git config --global user.name "whattheearl"
-RUN git fetch --tags https://${GITHUB_TOKEN}@github.com/whattheearl/jearl.io :origin/main
-# git fetch https://<access-token>@repo-url :origin/branch1
-
-
-RUN npx auto shipit
+RUN git fetch --tags --unshallow https://${GITHUB_TOKEN}@github.com/whattheearl/jearl.io :origin/main
+RUN npx auto shipit --name whattheearl --email earl.jonathan@gmail.com
 
 FROM nginx:1.20-alpine as server
 EXPOSE 80
