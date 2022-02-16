@@ -22,10 +22,11 @@ RUN npm run build
 FROM --platform=linux/amd64 node:16 as releaser
 ARG GITHUB_TOKEN
 ENV GITHUB_TOKEN=${GITHUB_TOKEN}
-WORKDIR /app/jearl.io
+WORKDIR /app/
 RUN git config --global user.name "Jonathan Earl"
 RUN git config --global user.email jonathan.earl@tylertech.com
-RUN git fetch --tags --unshallow https://${GITHUB_TOKEN}@github.com/whattheearl/jearl.io /app
+RUN git clone https://${GITHUB_TOKEN}@github.com/whattheearl/jearl.io .
+RUN git fetch --tags
 COPY --from=installer /app/ /app/jearl.io/
 RUN npx auto shipit
 
