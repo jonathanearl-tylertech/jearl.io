@@ -61,7 +61,7 @@ jobs:
       with:
         context: .
         build-args: |
-          "GITHUB_TOKEN=${{ secrets.GH_TOKEN }}"
+          "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}"
         target: releaser
         push: false
 
