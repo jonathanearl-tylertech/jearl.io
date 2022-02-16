@@ -27,6 +27,8 @@ RUN git config --global user.name "Jonathan Earl"
 RUN git config --global user.email jonathan.earl@tylertech.com
 RUN git clone https://${GITHUB_TOKEN}@github.com/whattheearl/jearl.io
 RUN ls
+RUN cd ./jearl.io
+RUN ls
 RUN git fetch --tags
 RUN cd ./jearl.io
 RUN ls
