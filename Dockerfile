@@ -20,7 +20,8 @@ COPY --from=installer /app/ /app/
 RUN npm run build
 
 FROM --platform=linux/amd64 node:16 as releaser
-ENV GITHUB_TOKEN=${github-token}
+ARG GITHUB_TOKEN
+ENV GITHUB_TOKEN=${GITHUB_TOKEN}
 WORKDIR /app/jearl.io
 COPY ./ /app/
 COPY --from=installer /app/ /app/jearl.io/
