@@ -20,15 +20,12 @@ COPY --from=installer /app/ /app/
 RUN npm run build
 
 FROM --platform=linux/amd64 node:16 as releaser
-ARG GITHUB_TOKEN
-ENV GITHUB_TOKEN=${GITHUB_TOKEN}
 WORKDIR /app/jearl.io
-COPY ./ /app/
-COPY --from=installer /app/ /app/jearl.io/
 RUN git config --global user.name "Jonathan Earl"
 RUN git config --global user.email jonathan.earl@tylertech.com
-RUN git fetch --tags --unshallow https://${GITHUB_TOKEN}@github.com/whattheearl/jearl.io
-CMD npx auto shipit
+RUN git fetch --tags --unshallow https://${GITHUB_TOKEN}@github.com/whattheearl/jearl.io /app
+COPY --from=installer /app/ /app/jearl.io/
+RUN npx auto shipit
 
 FROM nginx:1.20-alpine as server
 EXPOSE 80
