@@ -1,18 +1,12 @@
 name: deploy to prod
-
 on:
   push:
     branches:
       - main
 
-permissions:
-  contents: write
-  id-token: write
-
 jobs:
   publish-to-dockerhub:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v2
@@ -42,10 +36,6 @@ jobs:
 
   publish-release-to-github:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      id-token: write
-
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v2
