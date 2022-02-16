@@ -22,7 +22,6 @@ RUN npm run build
 FROM --platform=linux/amd64 node:16 as releaser
 ARG GITHUB_TOKEN
 ENV GITHUB_TOKEN=${GITHUB_TOKEN}
-WORKDIR /app/
 RUN git config --global user.name "Jonathan Earl"
 RUN git config --global user.email jonathan.earl@tylertech.com
 RUN git clone https://${GITHUB_TOKEN}@github.com/whattheearl/jearl.io
