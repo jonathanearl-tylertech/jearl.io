@@ -1,8 +1,8 @@
 FROM --platform=linux/amd64 node:16 as installer
 WORKDIR /app
-COPY ./jearl.io/package*.json /app/
+COPY ./client/package*.json /app/
 RUN npm ci
-COPY ./jearl.io/ /app/
+COPY ./client/ /app/
 
 FROM --platform=linux/amd64 node:16 as linter
 WORKDIR /app
@@ -27,7 +27,7 @@ RUN git config --global user.name "github action"
 RUN git config --global user.email action@github.com
 RUN git clone https://${GITHUB_TOKEN}@github.com/whattheearl/jearl.io .
 RUN git fetch --tags https://${GITHUB_TOKEN}@github.com/whattheearl/jearl.io
-WORKDIR /app/jearl.io
+WORKDIR /app/client
 RUN npm ci
 RUN npm run release
 
