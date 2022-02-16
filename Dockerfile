@@ -20,6 +20,8 @@ COPY --from=installer /app/ /app/
 RUN npm run build
 
 FROM --platform=linux/amd64 node:16 as releaser
+ARG GITHUB_TOKEN
+ENV GITHUB_TOKEN=${GITHUB_TOKEN}
 WORKDIR /app/jearl.io
 RUN git config --global user.name "Jonathan Earl"
 RUN git config --global user.email jonathan.earl@tylertech.com
