@@ -1,8 +1,13 @@
 name: deploy to prod
+
 on:
   push:
     branches:
       - main
+
+concurrency: 
+  group: ${{ github.head_ref }}
+  cancel-in-progress: true
 
 jobs:
   publish-to-dockerhub:
