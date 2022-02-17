@@ -1,3 +1,15 @@
+# v1.0.6 (Thu Feb 17 2022)
+
+#### 🐛 Bug Fix
+
+- chore(deps): update nextjs [#28](https://github.com/whattheearl/jearl.io/pull/28) ([@whattheearl](https://github.com/whattheearl))
+
+#### Authors: 1
+
+- Jonathan Earl ([@whattheearl](https://github.com/whattheearl))
+
+---
+
 # v1.0.5 (Wed Feb 16 2022)
 
 #### ⚠️ Pushed to `main`
