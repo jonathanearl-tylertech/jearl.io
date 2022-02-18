@@ -17,6 +17,7 @@ RUN npm run test --if-present
 FROM --platform=linux/amd64 node:16 as builder
 WORKDIR /app
 COPY --from=installer /app/ /app/
+COPY ./data /data/
 RUN npm run build
 
 FROM --platform=linux/amd64 node:16 as releaser

@@ -5,7 +5,7 @@ class Author {
   author: FrontMatterResult<any>;
 
   constructor() {
-    const author = FMLoader.loadFolder('_profiles');
+    const author = FMLoader.loadFolder('profiles');
     this.author = author[0];
   }
 

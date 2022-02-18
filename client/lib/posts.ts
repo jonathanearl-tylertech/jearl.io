@@ -6,7 +6,7 @@ class Posts {
   private posts: FrontMatterResult<IAttributes>[];
 
   constructor() {
-    this.posts = FMLoader.loadFolder('_posts');
+    this.posts = FMLoader.loadFolder('posts');
   }
 
   getAll(): FrontMatterResult<IAttributes>[] {
