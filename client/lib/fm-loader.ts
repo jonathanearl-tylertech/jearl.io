@@ -4,9 +4,9 @@ import fm from 'front-matter';
 
 class FMLoader {
 
-    loadFolder(folderName: '_posts' | '_profiles' | '_projects') {
+    loadFolder(folderName: 'posts' | 'profiles') {
         const root = process.cwd();
-        const folderPath = path.join(root, folderName);
+        const folderPath = path.join(root, "..", "datsa", folderName);
         const files = fs.readdirSync(folderPath);
         const frontMatter = files.map(filename => {
             const file = fs.readFileSync(path.join(folderPath, filename), 'utf-8')
