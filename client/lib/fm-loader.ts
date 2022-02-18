@@ -6,7 +6,7 @@ class FMLoader {
 
     loadFolder(folderName: 'posts' | 'profiles') {
         const root = process.cwd();
-        const folderPath = path.join(root, "..", "datsa", folderName);
+        const folderPath = path.join(root, "..", "data", folderName);
         const files = fs.readdirSync(folderPath);
         const frontMatter = files.map(filename => {
             const file = fs.readFileSync(path.join(folderPath, filename), 'utf-8')
