@@ -1,3 +1,17 @@
+# v1.0.7 (Sun Feb 20 2022)
+
+#### 🐛 Bug Fix
+
+- fix(ci): only allow one run per repo [#31](https://github.com/whattheearl/jearl.io/pull/31) ([@whattheearl](https://github.com/whattheearl))
+- Refactor(data): into folder [#30](https://github.com/whattheearl/jearl.io/pull/30) ([@whattheearl](https://github.com/whattheearl))
+- ci: dont allow concurrent actions [#29](https://github.com/whattheearl/jearl.io/pull/29) ([@whattheearl](https://github.com/whattheearl))
+
+#### Authors: 1
+
+- Jonathan Earl ([@whattheearl](https://github.com/whattheearl))
+
+---
+
 # v1.0.6 (Thu Feb 17 2022)
 
 #### 🐛 Bug Fix
