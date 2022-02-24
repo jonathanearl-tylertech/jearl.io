@@ -1,3 +1,15 @@
+# v1.0.8 (Thu Feb 24 2022)
+
+#### 🐛 Bug Fix
+
+- Add google analytics [#32](https://github.com/whattheearl/jearl.io/pull/32) ([@whattheearl](https://github.com/whattheearl))
+
+#### Authors: 1
+
+- Jonathan Earl ([@whattheearl](https://github.com/whattheearl))
+
+---
+
 # v1.0.7 (Sun Feb 20 2022)
 
 #### 🐛 Bug Fix
