@@ -1,3 +1,15 @@
+# v1.0.9 (Sat Feb 26 2022)
+
+#### 🐛 Bug Fix
+
+- chore(docs): update readme [#33](https://github.com/whattheearl/jearl.io/pull/33) ([@whattheearl](https://github.com/whattheearl))
+
+#### Authors: 1
+
+- Jonathan Earl ([@whattheearl](https://github.com/whattheearl))
+
+---
+
 # v1.0.8 (Thu Feb 24 2022)
 
 #### 🐛 Bug Fix
