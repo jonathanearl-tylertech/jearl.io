@@ -10,7 +10,7 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Adding posts
-create a new md file under `_posts`, the title convention is to replace any spaces with - but is not required as the title is pulled from the front-matter. front-matter is required to propery pass metadata as static props example below.
+create a new md file under `{project}/data/posts`, the title convention is to replace any spaces with - but is not required as the title is pulled from the front-matter. front-matter is required to propery pass metadata as static props example below.
  
 ```yml
 ---
