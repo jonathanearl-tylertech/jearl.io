@@ -1,3 +1,15 @@
+# v1.0.10 (Sun Mar 06 2022)
+
+#### ⚠️ Pushed to `main`
+
+- chore: add default port ([@whattheearl](https://github.com/whattheearl))
+
+#### Authors: 1
+
+- Jonathan Earl ([@whattheearl](https://github.com/whattheearl))
+
+---
+
 # v1.0.9 (Sat Feb 26 2022)
 
 #### 🐛 Bug Fix
