@@ -19,6 +19,7 @@ WORKDIR /app
 COPY --from=installer /app/ /app/
 COPY ./data /data/
 RUN npm run build
+EXPOSE 8080
 CMD ["npm", "start"]
 
 FROM node:16 as releaser
