@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import Header from '../../components/Header';
+import Header from '../../../client/components/Header';
 import styles from '../../styles/BlogList.module.css';
-import BlogListItem from '../../components/BlogListItem';
-import Posts from '../../lib/posts';
-import { Post } from '../../interfaces/post.interface';
+import BlogListItem from '../../../client/components/BlogListItem';
+import Posts from '../../../client/lib/posts';
+import { Post } from '../../../client/interfaces/post.interface';
 
 const Blog = ({ posts }: any) => {
   const blogListItems = posts
