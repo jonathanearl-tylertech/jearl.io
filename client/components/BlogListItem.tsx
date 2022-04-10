@@ -2,9 +2,9 @@ import styles from '../styles/BlogList.module.css';
 import Icon from './Icon';
 import Link from 'next/link';
 
-const BlogListItem = ({ post, url }: any) => {
-  const title = post.attributes.title;
-  const date = new Date(post.attributes.date);
+const BlogListItem = ({ meta }: any) => {
+  const { created, author, title, url } = meta;
+  const date = new Date(created);
   const month = date.toLocaleString('default', { month: 'long' }).substring(0, 3);
   const day = date.getDate();
   const year = date.getFullYear();
@@ -16,7 +16,7 @@ const BlogListItem = ({ post, url }: any) => {
             <div>
               <div className={styles.authorSection}>
                 <Icon icon={'🙎‍♂️'} size={16} />
-                <h4 className={styles.authorUsername}>{post.attributes.author.username}</h4>
+                <h4 className={styles.authorUsername}>{author}</h4>
               </div>
               <h3 className={styles.itemTitle}>{title}</h3>
               <div className={styles.itemDate}>{`${month} ${day}, ${year}`}</div>
